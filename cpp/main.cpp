@@ -16,6 +16,7 @@ void Loop()
 {
     static const int PERIOD_IN_US = 1000;
     static const int PERIOD_IN_US_2_NS = 1000;
+    static const int LOG_CIRCLE = 1000;
     int64_t count = 0;
 
     struct timespec init;
@@ -28,7 +29,7 @@ void Loop()
         }
 
         ++count;
-        print = (count % PERIOD_IN_US == 0);
+        print = (count % LOG_CIRCLE == 0);
 
         struct timespec pre;
         clock_gettime(CLOCK_MONOTONIC, &pre);
@@ -60,6 +61,9 @@ int main()
     signal(SIGINT, &Stop);
     Loop();
 
-    std::cout << "hello world\n";
+    std::thread rtThread(Loop);
+    rtThread.join();
+    printf("thread join ok!\n");
+
     return 0;
 }
