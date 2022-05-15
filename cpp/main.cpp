@@ -37,7 +37,7 @@ void Loop()
         struct timespec now;
         clock_gettime(CLOCK_MONOTONIC, &now);
         if (print) {
-            printf("count=%ld duration=%luns\n", count, TimeDiffInNs(&pre, &now));
+            printf("count=%ld duration=%ldns\n", count, TimeDiffInNs(&pre, &now));
         }
 
         int64_t sleepTimeInUs = (count * PERIOD_IN_US * PERIOD_IN_US_2_NS - TimeDiffInNs(&init, &now))
