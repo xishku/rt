@@ -5,7 +5,7 @@
 #include <ctime>
 
 
-static bool g_running = true;
+static volatile bool g_running = true;
 
 int64_t TimeDiffInNs(struct timespec *pre, struct timespec *now)
 {

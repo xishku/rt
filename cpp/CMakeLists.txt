@@ -7,3 +7,5 @@ set(SOURCE_FILES main.cpp)
 
 # Add executable target with source files listed in SOURCE_FILES variable
 add_executable(main.out ${SOURCE_FILES})
+
+add_library(rt SHARED ${SOURCE_FILES})
