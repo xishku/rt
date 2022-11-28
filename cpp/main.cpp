@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <csignal>
 #include <ctime>
+#include <gtest/gtest.h>
 
 
 static volatile bool g_running = true;
@@ -56,14 +57,25 @@ void Stop(int s)
     g_running = false;
 }
 
-int main()
-{
-    signal(SIGINT, &Stop);
-    Loop();
+// int main()
+// {
+//     signal(SIGINT, &Stop);
+//     Loop();
 
-    std::thread rtThread(Loop);
-    rtThread.join();
-    printf("thread join ok!\n");
+//     std::thread rtThread(Loop);
+//     rtThread.join();
+//     printf("thread join ok!\n");
 
-    return 0;
+//     return 0;
+// }
+
+TEST(s11, t1) {
+    EXPECT_EQ(1, 1);
+
+}
+
+int main(int argc, char **argv) {
+
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }
