@@ -22,7 +22,7 @@ add_executable(main ${SOURCE_FILES})
 
 # add_library(rt SHARED ${SOURCE_FILES})
 # set(LINK_PATH "/home/g/wecode/rt-main/cpp/lib")
-set(LINK_PATH "/home/g/wecode/dx/VehicleStack/x-hunter-app/plugins/test/gps_tester/app/x86_64/lib")
+set(LINK_PATH "/home/ge/dev/rt/cpp/lib")
 message(STATUS ${LINK_PATH})
 
 
