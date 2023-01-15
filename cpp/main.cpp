@@ -4,6 +4,7 @@
 // #include <csignal>
 // #include <ctime>
 #include <gtest/gtest.h>
+#include "atomic_test.h"
 
 
 // static volatile bool g_running = true;
@@ -77,6 +78,11 @@ int Sum(int a, int b)
 TEST(sumtest, t1) {
     EXPECT_EQ(3, Sum(1, 2));
 
+}
+
+TEST(atomic_test, t1000000) {
+    MyCalc c;
+    EXPECT_EQ(500000050000000, c.ThdSumInt(10000000));
 }
 
 int main(int argc, char **argv) {

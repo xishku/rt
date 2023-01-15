@@ -1,8 +1,10 @@
 cmake_minimum_required(VERSION 3.10)  # CMake version check
 project(rt)               # Create project "simple_example"
-set(CAMKE_CXX_STARDARD 11)
+set(CAMKE_CXX_STARDARD 17)
 
 add_definitions("-Wall -g")
+add_definitions("-std=c++0x")
+
 # Add main.cpp file of project root directory as source file
 SET(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/output/bin)
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/output/lib)
